@@ -6,10 +6,12 @@ from django.urls import reverse
 # Create your models here.
 class Flight(models.Model):
     customer = models.ForeignKey('auth.User', related_name='flights', on_delete=models.CASCADE)
-    departure_location = models.CharField(max_length=200)
-    departure_time = models.CharField(max_length=200)
-    arrival_location = models.CharField(max_length=200)
-    arrival_time = models.CharField(max_length=200)
+    departure_location = models.CharField(max_length=50, default=None)
+    departure_date = models.CharField(max_length=50, default=None)
+    departure_time = models.CharField(max_length=50, default=None)
+    arrival_location = models.CharField(max_length=50, default=None)
+    arrival_date = models.CharField(max_length=50, default=None)
+    arrival_time = models.CharField(max_length=50, default=None)
     cost = models.IntegerField(default=0)
     status = models.IntegerField(default=0)
     create_date = models.DateTimeField(default=timezone.now)

@@ -24,4 +24,9 @@ urlpatterns = [
 
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('accounts/', include('django.contrib.auth.urls')),
+
+    path('flights/', include('flights.urls', namespace='flights')),
+    path('flights/', include('django.contrib.auth.urls')),
+
+    path('profile/', views.ProfilePage.as_view(), name='profile'),
 ]

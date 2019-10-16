@@ -1,156 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bootstrap4 %}
 
 {% block title %}
     Login
 {% endblock %}
 
 {% block contents %}
-    <!-- Slick Section Start -->
-    <section class="slider-wrapper st-two p-0">
-        <div id="slider-style-one" class="carousel slide bs-slider control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
 
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#slider-style-one" data-slide-to="0" class="active"></li>
-                <li data-target="#slider-style-one" data-slide-to="1"></li>
-                <li data-target="#slider-style-one" data-slide-to="2"></li>
-            </ol>
-
-            <!-- Wrapper For Slides -->
-            <div class="carousel-inner" role="listbox">
-
-                <!-- Item Slide -->
-                <div class="carousel-item active">
-
-                    <!-- Slide Background -->
-                    <img src="{% static 'ticket_reservation/images/slider/1.jpg' %}" alt="Slider Images"  class="slide-image"/>
-                    <div class="bs-slider-overlay"></div>
-
-                    <div class="container">
-                        <div class="row">
-                            <!-- Slide Text Layer -->
-                            <div class="slide-text slide-style-left st-two">
-                                <h1>Get a tour</h1>
-                                <h2>We provide best <span>Tour</span> Pacakage In Your <span>Budget</span></h2>
-                            </div>
-                            <!-- Package Box -->
-                            <div class="package-box">
-                                <h1><span>45%</span> off</h1>
-                                <h4>on all package</h4>
-                                <a href="#">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Slide -->
-
-                <!-- Item Slide -->
-                <div class="carousel-item">
-
-                    <!-- Slide Background -->
-                    <img src="{% static 'ticket_reservation/images/slider/2.jpg' %}" alt="Slider Images"  class="slide-image"/>
-                    <div class="bs-slider-overlay"></div>
-
-                    <div class="container">
-
-                        <div class="row">
-                            <!-- Slide Text Layer -->
-                            <div class="slide-text slide-style-right st-two">
-                                <h1>Get a tour</h1>
-                                <h2>We provide best <span>Tour</span> Pacakage In Your <span>Budget</span></h2>
-                            </div><!-- Package Box -->
-                            <div class="package-box slide-style-right">
-                                <h1><span>45%</span> off</h1>
-                                <h4>on all package</h4>
-                                <a href="#">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Slide -->
-
-                <!-- Item Slide -->
-                <div class="carousel-item">
-
-                    <!-- Slide Background -->
-                    <img src="{% static 'ticket_reservation/images/slider/3.jpg' %}" alt="Slider Images"  class="slide-image"/>
-                    <div class="bs-slider-overlay"></div>
-
-                    <div class="container">
-
-                        <div class="row">
-                            <!-- Slide Text Layer -->
-                            <div class="slide-text slide-style-center st-two">
-                                <h1>Get a tour</h1>
-                                <h2>We provide best <span>Tour</span> Pacakage</h2>
-                                <div class="btn-box">
-                                    <a href="#" class="btn-theme">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Slide -->
-
-            </div><!-- End of Wrapper For Slides -->
-
-            <!-- Left Control -->
-            <a class="left carousel-control" href="#slider-style-one" role="button" data-slide="prev">
-                <span class="fa fa-angle-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-
-            <!-- Right Control -->
-            <a class="right carousel-control" href="#slider-style-one" role="button" data-slide="next">
-                <span class="fa fa-angle-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-
-        </div> <!-- End  slider-style-one Slider -->
-    </section>
-    <!-- Slick Section End -->
-
-    <!-- Welcome Section Start -->
-    <section class="welcome-section">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-lg-12">
-    				<div class="icon-wrp">
-    					<div class="icon-box">
-    						<i class="fa fa-wifi"></i>
-    						<h5>Travel</h5>
-    						<a href="#">view more</a>
-    					</div>
-    					<div class="icon-box">
-    						<i class="fa fa-crosshairs"></i>
-    						<h5>Packages</h5>
-    						<a href="#">view more</a>
-    					</div>
-    					<div class="icon-box">
-    						<i class="fa fa-plane"></i>
-    						<h5>Vehicle</h5>
-    						<a href="#">view more</a>
-    					</div>
-    					<div class="icon-box">
-    						<i class="fa fa-umbrella"></i>
-    						<h5>Hoteel</h5>
-    						<a href="#">view more</a>
-    					</div>
-    					<div class="icon-box">
-    						<i class="fa fa-map-marker"></i>
-    						<h5>Location</h5>
-    						<a href="#">view more</a>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-    <!-- Welcome Section End -->
-
-        <!-- Contact Section Start -->
-    <section class="contact-section pt-90 pb-90">
+    <!-- Contact Section Start -->
+    <section class="contact-section pt-90 pb-90" style="margin-top: 40px; background-color: #255669;">
         <div class="container">
             <div class="row contact-bg">
                 <div class="col-md-12 col-lg-4 p-0">
@@ -187,7 +46,7 @@
                 </div>
                 <div class="col-md-12 col-lg-8 style-2">
 
-    			  	<form class="booking-form" method="post" action="#">
+    			  	<form class="booking-form" method="post">
                     	<nav>
     					  <div class="nav nav-tabs" id="nav-tab1" role="tablist">
     					    <a class="nav-item nav-link active" id="nav-hotelbk-tab" data-toggle="tab" href="#nav-hotelbk" role="tab" aria-controls="nav-hotelbk" aria-selected="true">Login to your account</a>
@@ -199,67 +58,21 @@
     					  <!-- item start -->
     					  <div class="tab-pane fade show active" id="nav-hotelbk" role="tabpanel" aria-labelledby="nav-hotelbk-tab">
                             <div class="form-row">
+
+                                {% csrf_token %}
+
+                                {# Install bootstrap4 first to work #}
+
                                 <div class="form-group col-md-12">
-                                    <input type="text" name="hotelname" class="form-control" placeholder="Input Hotel name here" required>
+                                   {% bootstrap_form form %}
                                 </div>
 
-                                <div class="form-group col-md-6">
-                                    <select class="form-control" name="hbcity">
-    							      <option value="choose-city">Choose City</option>
-    							      <option value="melbourne-australia">Melbourne, Australia</option>
-    							      <option value="chennai-india">Chennai, India</option>
-    							      <option value="london-uk">London, UK</option>
-    							      <option value="delhi-india">Delhi, India</option>
-    							    </select>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <select class="form-control"  name="hbcat">
-    							      <option value="choose-category">Choose Category</option>
-    							      <option value="business">Business</option>
-    							      <option value="family">Family</option>
-    							      <option value="romance">Romance</option>
-    							      <option value="batchelor">Batchelor</option>
-    							    </select>
-                                </div>
-
-                                <div class="form-group col-md-4">
-                                    <select class="form-control"  name="hbminprice">
-    							      <option value="choose-category">Min Price</option>
-    							      <option value="100">100</option>
-    							      <option value="200">200</option>
-    							      <option value="300">300</option>
-    							      <option value="400">400</option>
-    							    </select>
-                                </div>
-
-                                <div class="form-group col-md-4">
-                                    <select class="form-control"  name="hbmaxprice">
-    							      <option value="choose-category">Max Price</option>
-    							      <option value="200">200</option>
-    							      <option value="300">300</option>
-    							      <option value="400">400</option>
-    							      <option value="500">500</option>
-    							    </select>
-                                </div>
-
-                                <div class="form-group col-md-4">
-                                    <select class="form-control"  name="hboffer">
-    							      <option value="choose-category">Choose Offer</option>
-    							      <option value="5%">5%</option>
-    							      <option value="10%">10%</option>
-    							      <option value="20%">20%</option>
-    							      <option value="25%">25%</option>
-    							    </select>
-                                </div>
                                 <div class="form-group col-md-12">
                                     <div class="contact-textarea text-center">
-                                        <button class="btn btn-theme" type="submit" value="Submit Form">Find Hotel</button>
+                                        <button class="btn btn-lg btn-warning" type="submit" value="Login">Login</button>
                                     </div>
                                 </div>
-                                <div class="col-md-12 info-text">
-                                	<p>we have listed <span>2435</span> hotels all over the world</p>
-                                </div>
+
                             </div>
     					  </div>
     					  <!-- item end -->

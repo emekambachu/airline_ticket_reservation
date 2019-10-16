@@ -10,9 +10,9 @@ urlpatterns = [
     # class based views
     path('all-flights',
          views.AllFlightsView.as_view(),
-         name=''),
+         name='all-flights'),
 
     path('create-flight',
          views.CreateFlightView.as_view(),
-         name=''),
+         name='create-flight'),
     ]

@@ -44,7 +44,7 @@
 <div class="page-wrapper">
 
     <!-- Header Section Start -->
-    <header class="header header-style-1 clearfix">
+    <header class="header header-style-2 clearfix">
 
         <div class="top-bar">
             <div class="container">
@@ -88,30 +88,65 @@
 
 
                         <div class="collapse navbar-collapse" id="navbar-collapse-1">
-
                             <!-- main-menu -->
                             <ul class="navbar-nav ml-xl-auto">
 
                                 <!-- mega-menu end -->
-                                <li class="nav-item dropdown active">
-                                    <a href="{% url 'home' %}" class="nav-link dropdown-toggle"
-                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+                                <li class="nav-item">
+                                    <a href="{% url 'home' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Home</a>
                                 </li>
 
-                                <li class="nav-item dropdown active">
-                                    <a href="#" class="nav-link dropdown-toggle"
-                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Flight Schedules</a>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Available Flights</a>
                                 </li>
 
-                                <li class="nav-item dropdown active">
-                                    <a href="#" class="nav-link dropdown-toggle"
-                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact us</a>
+                                {% if user.is_authenticated and user.profile.role == "user" %}
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Bookings</a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Update Account</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{% url 'accounts:logout' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Logout</a>
+                                </li>
+
+                                {% elif user.is_authenticated and user.profile.role == "admin" %}
+
+                                <li class="nav-item">
+                                    <a href="{% url 'flights:all-flights' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Flights Schedules</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'flights:create-flight' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Add Flight</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'accounts:logout' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Logout</a>
+                                </li>
+
+                                {% else %}
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Flight Schedules</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Contact us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'accounts:login' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'accounts:signup' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Sign up</a>
+                                </li>
+
+                                {% endif %}
                                 <!-- mega-menu start -->
 
                             </ul>
-
                         </div>
+
                     </div>
                 </nav>
             </div>

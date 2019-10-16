@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
 
-</body>
-</html>
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block contents %}
+    <section class="inner-area parallax-bg" data-background="images/bg/px-1.jpg" data-type="parallax" data-speed="3" style="background-image: url({% static 'ticket_reservation/images/bg/px-2.jpg' %}); background-position: 50% 16.8px;">
+            <div class="container">
+              <div class="section-content">
+                <div class="row">
+                  <div align="left" class="col-12">
+                    <h5 style="color: #ffffff;">{{ user.first_name }} {{ user.last_name }}</h5>
+                    <p>Last Login: <a href="#">{{ user.last_login }}</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+{% endblock %}

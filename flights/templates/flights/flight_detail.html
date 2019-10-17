@@ -1,10 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
 
-</body>
-</html>
+{% block title %}
+    Flight Detail
+{% endblock %}
+
+{% block contents %}
+    <section class="special-packages-sec pt-85 pb-60">
+            <div class="container">
+                <div class="row grid-mb">
+                    <div class="col-md-12">
+                        <div class="special-packages dtl-st">
+                            <div class="thumb">
+                                <img src="{% static 'ticket_reservation/images/features/dtl-1.jpg' %}" alt="">
+                                <div class="offer-price"> Off 40%</div>
+                                <div class="post-title-box">
+                                    <div class="price-box">
+                                        <h5><span>$</span>{{ flight.cost }}</h5>
+                                    </div>
+                                    <div class="title-box">
+                                        <h4>
+                                            <span class="theme-color">From:</span> {{ flight.departure_location }}
+                                            <span class="theme-color">To:</span> {{ flight.arrival_location }}</h4>
+                                        <h5 style="color: #fff;">
+                                            <span class="theme-color">Leaves:</span> {{ flight.departure_date|date:"d, M. Y" }}
+                                            <span class="theme-color">Arrives:</span> {{ flight.arrival_date|date:"d, M. Y" }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <ul class="info">
+                                    <li><a href="#"><i class="fa fa-user"></i>2 Seats Available</a></li>
+                                </ul>
+                                <h5 class="share-btn">
+                                    <i class="fa fa-share-alt"></i>Share</h5>
+
+                                {% if user.is_authenticated and user.profile.role == "admin" %}
+
+                                <a class="btn-theme btn-warning" href="#">Update</a>
+                                <a class="btn-theme btn-danger" href="#">Delete</a>
+
+                                {% elif user.is_authenticated and user.profile.role == "user" %}
+
+                                <a class="btn-theme btn-warning" href="#">Book Now</a>
+
+                                {% else %}
+
+                                <a class="btn-theme btn-warning" href="{% url 'accounts:login' %}">Login to book</a>
+
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

@@ -103,13 +103,17 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Available Flights</a>
+                                    <a href="{% url 'flights:all-flights' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Available Flights</a>
                                 </li>
 
                                 {% if user.is_authenticated and user.profile.role == "user" %}
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Bookings</a>
+                                    <a href="{% url 'profile' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Dashboard</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Reservations</a>
                                 </li>
 
                                 <li class="nav-item">
@@ -121,6 +125,10 @@
                                 </li>
 
                                 {% elif user.is_authenticated and user.profile.role == "admin" %}
+
+                                <li class="nav-item">
+                                    <a href="{% url 'profile' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Dashboard</a>
+                                </li>
 
                                 <li class="nav-item">
                                     <a href="{% url 'flights:all-flights' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Flights Schedules</a>
@@ -219,7 +227,6 @@
                   <li><a href="#">Blog</a></li>
                   <li><a href="#">Contact</a></li>
                 </ul>
-
               </div>
             </div>
 
@@ -234,6 +241,7 @@
                   <li><i class="pe-7s-print"></i> Fax: 001 (407) 901-6400</li>
                   <li><i class="pe-7s-mail"></i> <a href="mailto:">Email: info@bdCoder.com</a></li>
                 </ul>
+
                 <div class="footer-item">
                   <h6>News <span>letter</span></h6>
                   <div class="input-group subscribe-style-two">
@@ -246,10 +254,12 @@
 
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </footer>
+
     <section class="footer-copy-right bg-theme-color-2 text-white p-0">
       <div class="container">
         <div class="row">

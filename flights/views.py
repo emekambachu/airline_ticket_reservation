@@ -4,25 +4,35 @@ from django.utils import timezone
 
 from . models import Flight
 
+from accounts.models import Profile
+
 from . forms import CreateFlightForm
 
 from django.urls import reverse_lazy
-
-from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic import (TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView)
 
+# get logged in user details for this view
+from django.contrib.auth import get_user_model
+User = get_user_model()
+
 # Create your views here.
 
 
-class AllFlightsView(ListView, LoginRequiredMixin):
+class AllFlightsView(ListView):
     model = Flight
 
 
 class CreateFlightView(CreateView, LoginRequiredMixin):
+
     form_class = CreateFlightForm
+    model = Flight
+    redirect_field_name = 'flights/flight_detail.html'
+
+
+class FlightDetailView(DetailView):
     model = Flight
 
 

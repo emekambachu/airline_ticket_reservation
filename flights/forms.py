@@ -33,7 +33,7 @@ class CreateFlightForm(forms.ModelForm):
         # fields = '__all__'
 
         # Show specific fields
-        fields = ('departure_location', 'departure_date', 'departure_time', 'arrival_location', 'arrival_date', 'arrival_time', 'cost', 'status')
+        fields = ('departure_location', 'departure_date', 'departure_time', 'arrival_location', 'arrival_date', 'arrival_time', 'cost')
 
         # add class attributes to form fields
         # widgets = {
@@ -54,6 +54,18 @@ class CreateFlightForm(forms.ModelForm):
             }),
 
             'departure_time': TimePickerInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Select a date',
+                'required': True
+            }),
+
+            'arrival_date': DatePickerInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Select a date',
+                'required': True
+            }),
+
+            'arrival_time': TimePickerInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Select a date',
                 'required': True

@@ -8,11 +8,15 @@ app_name = 'flights'
 urlpatterns = [
 
     # class based views
-    path('all-flights',
+    path('',
          views.AllFlightsView.as_view(),
          name='all-flights'),
 
     path('create-flight',
          views.CreateFlightView.as_view(),
          name='create-flight'),
+
+    path('flight-detail/<int:pk>',
+         views.FlightDetailView.as_view(),
+         name='flight-detail'),
     ]

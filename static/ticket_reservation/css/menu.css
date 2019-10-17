@@ -23,7 +23,7 @@ header.header .container{
 }
 .header .navbar-nav li .nav-link {
     color: #333333;
-    font-size: 16px;
+    font-size: 12px;
     padding: 28px 15px 27px 15px;
     z-index: 102;
     border: none;
@@ -83,9 +83,6 @@ header.header .container{
     text-align: center;
     margin-top: -10px;
 }
-
-
-
 
 
 /*Mega Menu*/

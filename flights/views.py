@@ -1,10 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
-from django.utils import timezone
-
 from . models import Flight
-
-from accounts.models import Profile
 
 from . forms import CreateFlightForm
 
@@ -25,7 +21,7 @@ class AllFlightsView(ListView):
     model = Flight
 
 
-class CreateFlightView(CreateView, LoginRequiredMixin):
+class CreateFlightView(LoginRequiredMixin, CreateView):
 
     form_class = CreateFlightForm
     model = Flight

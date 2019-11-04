@@ -140,3 +140,10 @@ AUTH_PROFILE_MODULE = "accounts.Profile"
 LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_REDIRECT_URL = 'home'
 
+# Sending Email with django
+EMAIL_HOST = 'xeddtech.net'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'solutions@xeddtech.net'
+EMAIL_HOST_PASSWORD = 'Xeddtech_1990'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True

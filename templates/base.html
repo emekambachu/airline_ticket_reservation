@@ -106,7 +106,7 @@
                                     <a href="{% url 'flights:all-flights' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Available Flights</a>
                                 </li>
 
-                                {% if user.is_authenticated and user.profile.role == "user" %}
+                                {% if user.is_authenticated and not user.profile.is_admin %}
 
                                 <li class="nav-item">
                                     <a href="{% url 'profile' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Dashboard</a>
@@ -117,22 +117,19 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Update Account</a>
+                                    <a href="{% url 'accounts:update_profile' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Update Account</a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="{% url 'accounts:logout' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Logout</a>
                                 </li>
 
-                                {% elif user.is_authenticated and user.profile.role == "admin" %}
+                                {% elif user.is_authenticated and user.profile.is_admin %}
 
                                 <li class="nav-item">
                                     <a href="{% url 'profile' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Dashboard</a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="{% url 'flights:all-flights' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Flights Schedules</a>
-                                </li>
                                 <li class="nav-item">
                                     <a href="{% url 'flights:create-flight' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Add Flight</a>
                                 </li>
@@ -141,10 +138,6 @@
                                 </li>
 
                                 {% else %}
-
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Flight Schedules</a>
-                                </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Contact us</a>
                                 </li>

@@ -14,3 +14,8 @@ class UserSignupForm(UserCreationForm):
         self.fields['last_name'].label = 'Last Name'
         self.fields['username'].label = 'Display Name'
         self.fields['email'].label = 'Email Address'
+
+        # add bootstrap form control class
+        super(UserSignupForm, self).__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'

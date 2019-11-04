@@ -41,7 +41,7 @@ class UserSignUpPage(View):
     form_class = UserSignupForm
 
     # after a successful sign up go to login page
-    success_url = reverse_lazy('accounts:login')
+    success_url = reverse_lazy('login')
 
     # add template name for signup
     template_name = 'accounts/signup.html'
@@ -96,5 +96,5 @@ class UpdateProfileView(LoginRequiredMixin, UpdateView):
     template_name = 'accounts/signup.html'
     success_url = reverse_lazy('profile')
 
-    def get_object(self, queryset=None):
+    def get_object(self):
         return self.request.user.profile

@@ -134,11 +134,11 @@ STATICFILES_DIRS = (
   os.path.join(BASE_DIR, 'static/'),
 )
 
-AUTH_PROFILE_MODULE = "accounts.Profile"
+# AUTH_USER_MODEL = "accounts.Profile"
 
 # login and logout redirect
 LOGIN_REDIRECT_URL = 'profile'
-LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'accounts:login'
 
 # Sending Email with django
 EMAIL_HOST = 'xeddtech.net'

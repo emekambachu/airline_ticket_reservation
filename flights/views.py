@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
+from django.db import IntegrityError
+
 from django.contrib import messages
 
 # run pip install django-braces first
@@ -53,8 +55,9 @@ class AllReservationsView(LoginRequiredMixin, ListView):
     model = Reservation
 
 
-class ReservationDetailView(LoginRequiredMixin, DetailView):
+class ReservationDetailView(LoginRequiredMixin, TemplateView):
     model = Reservation
+    template_name = 'flights/reservation_detail.html'
 
 
 class BookTicket(LoginRequiredMixin, RedirectView):
@@ -68,7 +71,7 @@ class BookTicket(LoginRequiredMixin, RedirectView):
         flight = get_object_or_404(Flight, pk=self.kwargs.get('pk'))
 
         try:
-            # get object from reservation where user is equal to logged in or current user
+            # create object for reservation where user is equal to logged in or current user
             Reservation.objects.create(user=self.request.user, flight=flight)
         except IntegrityError:
             messages.warning(self.request, 'Warning! Already a booked')

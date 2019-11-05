@@ -4,6 +4,12 @@ from django.urls import reverse
 from accounts.models import Profile
 from django.utils.crypto import get_random_string
 
+# import current user model
+from django.contrib.auth import get_user_model
+
+# connect current reservation to whichever user is logged in
+User = get_user_model()
+
 
 # Create your models here.
 class Flight(models.Model):
@@ -14,13 +20,9 @@ class Flight(models.Model):
     arrival_date = models.DateField(max_length=50, default=None, null=False)
     arrival_time = models.TimeField(max_length=50, default=None, null=False)
     cost = models.IntegerField(default=0, null=False)
+    customers = models.ManyToManyField(User, through='Reservation')
     status = models.IntegerField(default=1)
-    create_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
-
-    def create(self):
-        self.published_date = timezone.now()
-        self.save()
+    created_at = models.DateTimeField(default=timezone.now)
 
     def get_absolute_url(self):
         return reverse("flights:flight-detail", kwargs={'pk': self.pk})
@@ -31,20 +33,18 @@ class Flight(models.Model):
 
 class Reservation(models.Model):
     flight = models.ForeignKey(Flight, related_name='reservations', on_delete=models.CASCADE)
-    profile = models.ForeignKey(Profile, related_name='user_reservation', on_delete=models.CASCADE)
-    reservation_code = models.CharField(default=0, null=False)
+    user = models.ForeignKey(User, null=False, default=0, related_name='user_flights', on_delete=models.CASCADE)
+    reservation_code = models.CharField(default=0, null=False, max_length=20, unique=True)
+    created_at = models.DateTimeField(default=timezone.now)
     status = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
         self.reservation_code = "FLIGHT" + get_random_string(12, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')
         super().save(*args, **kwargs)
 
-    # Use this for url paths in url.py
-    def get_absolute_url(self):
-        return reverse('flights:reservation-detail', kwargs={'pk': self.pk})
-
     class Meta:
         ordering = ['-created_at']
+        unique_together = ('flight', 'user')
 
     def __str__(self):
         return str(self.reservation_code)

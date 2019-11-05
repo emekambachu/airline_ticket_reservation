@@ -11,7 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # from django.views.generic.edit import UpdateView
 
 # import forms
-from .forms import UserSignupForm
+from .forms import UserSignupForm, UserUpdateForm
 
 # import Profile class from model class
 from .models import Profile
@@ -92,9 +92,9 @@ class UserSignUpPage(View):
 
 class UpdateProfileView(LoginRequiredMixin, UpdateView):
     model = Profile
-    fields = ['first_name', 'last_name', 'username']
-    template_name = 'accounts/signup.html'
+    form_class = UserUpdateForm
+    template_name = 'accounts/profile_update_form.html'
     success_url = reverse_lazy('profile')
 
-    def get_object(self):
-        return self.request.user.profile
+    def get_object(self, queryset=None):
+        return self.request.user

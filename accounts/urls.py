@@ -36,9 +36,9 @@ urlpatterns = [
          auth_views.PasswordResetCompleteView.as_view(template_name='accounts/password_reset_complete.html'),
          name='password_reset_complete'),
 
-    path('update_profile/',
+    path('update-profile/',
          views.UpdateProfileView.as_view(),
-         name='update_profile'),
+         name='update-profile'),
 
     path('logout/',
          auth_views.LogoutView.as_view(),

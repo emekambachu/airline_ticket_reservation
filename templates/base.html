@@ -71,8 +71,6 @@
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -88,6 +86,7 @@
                         <!-- header dropdown buttons end-->
                         <a class="navbar-brand" href="{% url 'home' %}">
                             <img id="logo_img" src="{% static 'ticket_reservation/images/logo-1.png' %}" alt=""></a>
+
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -106,7 +105,7 @@
                                     <a href="{% url 'flights:all-flights' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Available Flights</a>
                                 </li>
 
-                                {% if user.is_authenticated and not user.profile.is_admin %}
+                                {% if user.is_authenticated %}
 
                                 <li class="nav-item">
                                     <a href="{% url 'profile' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Dashboard</a>
@@ -117,38 +116,32 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="{% url 'accounts:update_profile' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Update Account</a>
+                                    <a href="{% url 'accounts:update-profile' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Update Account</a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="{% url 'accounts:logout' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Logout</a>
-                                </li>
-
-                                {% elif user.is_authenticated and user.profile.is_admin %}
-
-                                <li class="nav-item">
-                                    <a href="{% url 'profile' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Dashboard</a>
-                                </li>
+                                {% if user.profile.is_admin %}
 
                                 <li class="nav-item">
                                     <a href="{% url 'flights:create-flight' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Add Flight</a>
                                 </li>
+
+                                {% endif %}
+
                                 <li class="nav-item">
                                     <a href="{% url 'accounts:logout' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Logout</a>
                                 </li>
-
                                 {% else %}
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Contact us</a>
-                                </li>
-                                <li class="nav-item">
+                                    <li class="nav-item">
                                     <a href="{% url 'accounts:login' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Login</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{% url 'accounts:signup' %}" class="nav-link" aria-haspopup="true" aria-expanded="false">Sign up</a>
                                 </li>
-
                                 {% endif %}
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Contact us</a>
+                                </li>
                                 <!-- mega-menu start -->
 
                             </ul>
@@ -171,35 +164,33 @@
       <div class="container">
         <div class="section-content">
           <div class="row">
+
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="footer-item footer-widget-one">
                   <img class="footer-logo mb-25" src="{% static 'ticket_reservation/images/logo-1.png' %}" alt="">
-                    <p>Dolorum quae quis cumque officia labore delectus at animi ducimus non nisi, dolores sapiente</p>
+                    <p>Dolorum quae quis cumque officia labore delectus at</p>
                       <hr>
                       <h6>Follow<span> Us</span></h6>
                       <ul class="social-icon bg-transparent bordered-theme">
                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                       </ul>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="footer-item">
+
                 <div class="footer-title">
                   <h4>Our <span>Services</span></h4>
                   <div class="border-style-3"></div>
                 </div>
+
                 <ul class="footer-list">
                   <li><a href="#">Sign up to theme</a></li>
                   <li><a href="#">Log in account</a></li>
                   <li><a href="#">Help and support</a></li>
-                  <li><a href="#">Read our blog</a></li>
-                  <li><a href="#">Visit our help section</a></li>
-                  <li><a href="#">Donation Fund</a></li>
                 </ul>
 
               </div>
@@ -215,9 +206,6 @@
                 <ul class="footer-list">
                   <li><a href="#">About Us</a></li>
                   <li><a href="#">Services</a></li>
-                  <li><a href="#">Team</a></li>
-                  <li><a href="#">Gallery</a></li>
-                  <li><a href="#">Blog</a></li>
                   <li><a href="#">Contact</a></li>
                 </ul>
               </div>
@@ -225,10 +213,12 @@
 
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="footer-item">
+
                 <div class="footer-title">
                   <h4>Quick <span>Contact</span></h4>
                   <div class="border-style-3"></div>
                 </div>
+
                 <ul class="footer-list footer-contact mb-10">
                   <li><i class="pe-7s-call"></i> Phone: 001 (407) 901-6400</li>
                   <li><i class="pe-7s-print"></i> Fax: 001 (407) 901-6400</li>

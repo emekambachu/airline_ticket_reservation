@@ -19,4 +19,13 @@ urlpatterns = [
     path('flight-detail/<int:pk>',
          views.FlightDetailView.as_view(),
          name='flight-detail'),
+
+    path('all-reservations/',
+         views.AllReservationsView.as_view(),
+         name='all-reservations'),
+
+    path('reservation-detail/<int:pk>',
+         views.ReservationDetailView.as_view(),
+         name='reservation-detail'),
+
     ]

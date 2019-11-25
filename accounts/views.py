@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 
 # import for generic class based views
-from django.views.generic import View, UpdateView
+from django.views.generic import View, UpdateView, TemplateView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 

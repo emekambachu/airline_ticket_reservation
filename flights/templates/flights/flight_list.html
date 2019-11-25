@@ -50,10 +50,11 @@
 {#                        <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>#}
 {#                        <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>#}
 {#                    </ul>#}
-                    <h5 class="share-btn"><i class="fa fa-share-alt"></i>Share</h5>
+                    <h5 class="share-btn">
+                        <i class="fa fa-share-alt"></i>Share</h5>
 
                     {% if user.is_authenticated and user in flight.customers.all %}
-                    <a class="btn-theme">Already Booked</a>
+                        <a href="{% url 'flights:flight-detail' pk=flight.id %}" class="btn-theme">Booked</a>
 
                     {% elif user.is_authenticated and user not in flight.customers.all %}
                     <a class="btn-theme" href="{% url 'flights:book-ticket' pk=flight.id %}">Book Now</a>

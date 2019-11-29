@@ -1,13 +1,16 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
     </head>
     <body>
-    <img id="logo_img" src="{% static 'ticket_reservation/images/logo-1.png' %}" alt=""></a>
+    <img id="logo_img" src="{% static 'ticket_reservation/images/logo-1.png' %}" alt="">
         <h3>Hello {{ firstname }} {{ lastname }}</h3><br>
 
          <p>Your fight ticket has been booked, below are the details:</p>
+         <p><strong>Reservation Code:</strong> {{ reservation_code }}</p>
          <p><strong>Departure:</strong> {{ departure_location }} on {{ departure_date }}</p>
          <p><strong>Arrival:</strong> {{ arrival_location }} on {{ departure_date }}</p><br>
 

@@ -38,14 +38,14 @@
 
                                 {% if user.is_authenticated and user.profile.is_admin %}
 
-                                <a class="btn-theme btn-warning" href="#">Update</a>
-                                <a class="btn-theme btn-danger" href="#">Delete</a>
+                                <a class="btn-theme btn-warning" href="{% url 'flights:update-flight' pk=flight.id %}">Update</a>
+                                <a class="btn-theme btn-danger" href="{% url 'flights:delete' pk=flight.id %}">Delete</a>
 
                                 {% elif user.is_authenticated and not user.profile.is_admin %}
                                     {% if user in flight.customers.all %}
                                         <a class="btn-theme btn-warning" href="#">Cancel</a>
                                         {% else %}
-                                        <a class="btn-theme btn-warning" href="#">Book Now</a>
+                                        <a class="btn-theme btn-warning" href="{% url 'flights:book-ticket' pk=flight.id %}">Book Now</a>
                                     {% endif %}
 
                                 {% else %}

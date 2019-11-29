@@ -23,6 +23,8 @@ urlpatterns = [
     path('', views.HomePage.as_view(), name='home'),
 
     path('accounts/', include('accounts.urls', namespace='accounts')),
+
+    # if not added, the default url becomes registration
     path('accounts/', include('django.contrib.auth.urls')),
 
     path('flights/', include('flights.urls', namespace='flights')),

@@ -20,13 +20,13 @@ from django.views.generic import (TemplateView, ListView, DetailView, CreateView
 # import for django mail
 from django.core.mail import send_mail
 
-# import html email string loader
+# import html string loader for mail
 from django.template.loader import render_to_string
 
-# import strip tags
+# import strip tags for mail
 from django.utils.html import strip_tags
 
-# import django settings
+# import django settings for mail
 from django.conf import settings
 
 # get logged in user details for this view
@@ -56,6 +56,7 @@ class FlightUpdateView(LoginRequiredMixin, UpdateView):
     redirect_field_name = 'flights/flight_detail.html'
     # form_class = FlightUpdateForm
     model = Flight
+    fields = ['departure_location', 'departure_date', 'departure_time', 'arrival_location', 'arrival_date', 'arrival_time', 'cost']
 
 
 class FlightDeleteView(LoginRequiredMixin, DeleteView):
@@ -92,11 +93,11 @@ class BookTicket(LoginRequiredMixin, RedirectView):
                 'lastname': customer.last_name,
                 'username': customer.username,
                 'email': customer.email,
-                'ticket': reservation.reservation_code,
-                'from': flight.departure_location,
-                'from_date': flight.departure_date,
-                'to': flight.arrival_location,
-                'to_date': flight.arrival_date,
+                'reservation_code': reservation.reservation_code,
+                'departure_location': flight.departure_location,
+                'departure_date': flight.departure_date,
+                'arrival_location': flight.arrival_location,
+                'arrival_date': flight.arrival_date,
                 'subject': subject
             })
             plain_message = strip_tags(html_message)
@@ -110,4 +111,19 @@ class BookTicket(LoginRequiredMixin, RedirectView):
 
 
 class CancelTicket(LoginRequiredMixin, RedirectView):
-    pass
+
+    # redirect to group detail page after joining group
+    def get_redirect_url(self, *args, **kwargs):
+        return reverse('flights:flight-detail', kwargs={'pk': self.kwargs.get('pk')})
+
+    def get(self, request, *args, **kwargs):
+
+        try:
+            reservation = Reservation.objects.filter(user=self.request.user,
+                                                           group__pk=self.kwargs.get('pk')).get()
+        except Reservation.DoesNotExist:
+            messages.warning(self.request, 'Sorry!! You have not reserved this ticket')
+        else:
+            reservation.delete()
+            messages.success(self.request, 'You have left the group')
+        return super().get(request, *args, **kwargs)

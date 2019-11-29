@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from flights.models import Flight, Reservation
@@ -12,7 +12,7 @@ class HomePage(TemplateView):
     template_name = 'home.html'
 
 
-class ProfilePage(LoginRequiredMixin, TemplateView):
+class ProfilePage(LoginRequiredMixin, ListView):
     template_name = 'accounts/profile.html'
     model = Flight
     select_related = ('user', 'flight')

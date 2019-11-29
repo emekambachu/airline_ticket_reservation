@@ -120,7 +120,7 @@ class CancelTicket(LoginRequiredMixin, RedirectView):
 
         try:
             reservation = Reservation.objects.filter(user=self.request.user,
-                                                           group__pk=self.kwargs.get('pk')).get()
+                                                           flight__pk=self.kwargs.get('pk')).get()
         except Reservation.DoesNotExist:
             messages.warning(self.request, 'Sorry!! You have not reserved this ticket')
         else:

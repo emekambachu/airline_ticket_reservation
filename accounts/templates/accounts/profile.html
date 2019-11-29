@@ -20,5 +20,61 @@
             </div>
           </section>
 
+    <section class="special-packages-sec pt-85 pb-60">
+        <div class="container">
+            <h3 class="title-center">Reserved Flights</h3>
+            <div class="row grid-mb">
+
+            {% for flight in object_list %}
+                {% if user in flight.customers.all %}
+            <div class="col-md-4">
+                <div class="special-packages">
+                    <div class="thumb">
+                        <img src="{% static 'ticket_reservation/images/features/1.jpg' %}" alt="">
+                        <div class="offer-price"> Off 40%</div>
+                        <div class="post-title-box">
+                            <div class="price-box">
+                                <h5><span>$</span>{{ flight.cost }}</h5>
+                            </div>
+                            <div class="title-box">
+                                <h6 style="color: #fff;">
+                                    <span class="theme-color">From:</span> {{ flight.departure_location }}
+                                    <span class="theme-color">To:</span> {{ flight.arrival_location }}</h6>
+                                <h6 style="color: #fff;">
+                                    <span class="theme-color">Leaves:</span> {{ flight.departure_date|date:"d, M. Y" }}
+                                    <span class="theme-color">Arrives:</span> {{ flight.arrival_date|date:"d, M. Y" }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h5 class="share-btn">
+                            <i class="fa fa-share-alt"></i>Share</h5>
+                        <a class="btn-theme" href="{% url 'flights:cancel-ticket' pk=flight.id %}">Cancel</a>
+                    </div>
+                </div>
+            </div>
+                {% endif %}
+
+            {% endfor %}
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                   <div class="page-link-item text-center pt-30 pb-20">
+                      <ul>
+                        <li><a class="flaticon-left-arrow-1" href="#"></a></li>
+                        <li><a class="active" href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a class="flaticon-right-arrow-1" href="#"></a></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 
 {% endblock %}

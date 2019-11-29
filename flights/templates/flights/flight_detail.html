@@ -43,7 +43,7 @@
 
                                 {% elif user.is_authenticated and not user.profile.is_admin %}
                                     {% if user in flight.customers.all %}
-                                        <a class="btn-theme btn-warning" href="#">Cancel</a>
+                                        <a class="btn-theme btn-warning" href="{% url 'flights:cancel-ticket' pk=flight.id %}">Cancel</a>
                                         {% else %}
                                         <a class="btn-theme btn-warning" href="{% url 'flights:book-ticket' pk=flight.id %}">Book Now</a>
                                     {% endif %}

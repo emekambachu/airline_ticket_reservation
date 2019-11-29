@@ -24,10 +24,6 @@ urlpatterns = [
          views.AllReservationsView.as_view(),
          name='all-reservations'),
 
-    path('reservation-detail/<int:pk>/',
-         views.ReservationDetailView.as_view(),
-         name='reservation-detail'),
-
     path('book/<int:pk>/',
          views.BookTicket.as_view(),
          name='book-ticket'),

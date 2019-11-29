@@ -7,8 +7,13 @@ from django.utils.crypto import get_random_string
 # import current user model
 from django.contrib.auth import get_user_model
 
+from django import template
+
 # connect current reservation to whichever user is logged in
 User = get_user_model()
+
+# use for connecting related name, import template from django first
+register = template.Library()
 
 
 # Create your models here.
@@ -39,7 +44,7 @@ class Reservation(models.Model):
     status = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
-        self.reservation_code = "FLIGHT" + get_random_string(12, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+        self.reservation_code = "FLIGHT-" + get_random_string(12, '1234567890')
         super().save(*args, **kwargs)
 
     class Meta:

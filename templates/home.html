@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    Login
+    Home
 {% endblock %}
 
 {% block contents %}
@@ -32,14 +32,14 @@
                         <div class="row">
                             <!-- Slide Text Layer -->
                             <div class="slide-text slide-style-left st-two">
-                                <h1>Get a tour</h1>
-                                <h2>We provide best <span>Tour</span> Pacakage In Your <span>Budget</span></h2>
+                                <h1>Welcome to</h1>
+                                <h2>Touran<span>Airline</span> Services</h2>
                             </div>
                             <!-- Package Box -->
                             <div class="package-box">
                                 <h1><span>45%</span> off</h1>
                                 <h4>on all package</h4>
-                                <a href="#">Book Now</a>
+                                <a href="{% url 'flights:all-flights' %}">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -58,14 +58,9 @@
                         <div class="row">
                             <!-- Slide Text Layer -->
                             <div class="slide-text slide-style-right st-two">
-                                <h1>Get a tour</h1>
-                                <h2>We provide best <span>Tour</span> Pacakage In Your <span>Budget</span></h2>
+                                <h1>Airline Bookings</h1>
+                                <h2>Made Easy</h2>
                             </div><!-- Package Box -->
-                            <div class="package-box slide-style-right">
-                                <h1><span>45%</span> off</h1>
-                                <h4>on all package</h4>
-                                <a href="#">Book Now</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,12 +130,12 @@
     					</div>
     					<div class="icon-box">
     						<i class="fa fa-umbrella"></i>
-    						<h5>Hoteel</h5>
+    						<h5>Hotels</h5>
     						<a href="#">view more</a>
     					</div>
     					<div class="icon-box">
     						<i class="fa fa-map-marker"></i>
-    						<h5>Location</h5>
+    						<h5>Destinations</h5>
     						<a href="#">view more</a>
     					</div>
     				</div>
@@ -150,257 +145,67 @@
     </section>
     <!-- Welcome Section End -->
 
-    <!-- Special Places Section Start -->
-    <section class="special-places-sec pb-80">
-        <div class="container">
-            <div class="row">
-                <div class="section-title">
-                    <h4>Welcome to Touran Travel</h4>
-                    <h2>Available <span>Flight</span> Schedules</h2>
-                    <p>Deserunt quia ducimus ut illum optio cum eum voluptate corrupti numquam</p>
-                </div>
+<section class="special-packages-sec pt-85 pb-60">
+    <div class="container">
+
+        <div class="row">
+            <div class="section-title">
+                <h4>Available Flights</h4>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="tab-style">
-                        <nav>
-                          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="plc-asia-tab" data-toggle="tab" href="#plc-asia" role="tab" aria-controls="plc-asia" aria-selected="true">Asia</a>
-                            <a class="nav-item nav-link" id="plc-urope-tab" data-toggle="tab" href="#plc-urope" role="tab" aria-controls="plc-urope" aria-selected="false">Urope</a>
-                            <a class="nav-item nav-link" id="plc-africa-tab" data-toggle="tab" href="#plc-africa" role="tab" aria-controls="plc-africa" aria-selected="false">Africa</a>
-                          </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent">
-                          <!-- item start -->
-                          <div class="tab-pane fade show active" id="plc-asia" role="tabpanel" aria-labelledby="plc-asia-tab">
-                            <div class="specialplaces_carousel owl-carousel owl-theme owl-navst st-two">
+        </div>
 
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{% static 'ticket_reservation/images/service/1.jpg' %}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Redilova Tour Place</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="row grid-mb">
 
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{% static 'ticket_reservation/images/service/2.jpg' %}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Mountain adventure</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{% static 'ticket_reservation/images/service/3.jpg' %}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>adventure swimming</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{% static 'ticket_reservation/images/service/4.jpg' %}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Ratargul gorgeous</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                          </div>
-                          <!-- item end -->
-
-                          <!-- item start -->
-                          <div class="tab-pane fade" id="plc-urope" role="tabpanel" aria-labelledby="plc-urope-tab">
-                            <div class="specialplaces_carousel owl-carousel owl-theme owl-navst st-two">
-
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{% static 'ticket_reservation/images/service/1.jpg' %}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Redilova Tour Place</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{% static 'ticket_reservation/images/service/2.jpg' %}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Mountain adventure</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{% static 'ticket_reservation/images/service/3.jpg' %}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>adventure swimming</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item">
-                                    <div class="special-places">
-                                        <div class="thumb">
-                                            <img src="{% static 'ticket_reservation/images/service/4.jpg' %}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="price-box">
-                                                <h5><span>$</span>400</h5>
-                                                <h6>Starts From</h6>
-                                            </div>
-                                            <div class="title-box">
-                                                <h4>Ratargul gorgeous</h4>
-                                                <h3>peelamedu, cbe, india</h3>
-                                            </div>
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel adipisicing elit. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum swit voluptate maxime blanditiis deleniti dicta.</p>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                          </div>
-                          <!-- item end -->
-
+        {% for flight in object_list %}
+        <div class="col-md-4">
+            <div class="special-packages">
+                <div class="thumb">
+                    <img src="{% static 'ticket_reservation/images/features/1.jpg' %}" alt="">
+                    <div class="offer-price"> Off 40%</div>
+                    <div class="post-title-box">
+                        <div class="price-box">
+                            <h5><span>$</span>{{ flight.cost }}</h5>
+                        </div>
+                        <div class="title-box">
+                            <h6 style="color: #fff;">
+                                <span class="theme-color">From:</span> {{ flight.departure_location }}
+                                <span class="theme-color">To:</span> {{ flight.arrival_location }}</h6>
+                            <h6 style="color: #fff;">
+                                <span class="theme-color">Leaves:</span> {{ flight.departure_date|date:"d, M. Y" }}
+                                <span class="theme-color">Arrives:</span> {{ flight.arrival_date|date:"d, M. Y" }}</h6>
                         </div>
                     </div>
                 </div>
+                <div class="content">
+{#                    <ul class="info">#}
+{#                        <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>#}
+{#                        <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>#}
+{#                    </ul>#}
+                    <h5 class="share-btn">
+                        <i class="fa fa-share-alt"></i>Share</h5>
+
+                    {% if user.is_authenticated and user in flight.customers.all %}
+                        <a href="{% url 'flights:flight-detail' pk=flight.id %}" class="btn-theme">Booked</a>
+
+                    {% elif not user.is_authenticated %}
+                    <a class="btn-theme" href="{% url 'flights:book-ticket' pk=flight.id %}">Book Now</a>
+
+                    {% endif %}
+
+                </div>
             </div>
         </div>
-    </section>
+        {% endfor %}
+
+        </div>
+
+        <div class="text-center">
+            <a class="btn-theme" href="{% url 'flights:all-flights' %}">More Flights</a>
+        </div>
+
+
+    </div>
+</section>
     <!-- Special Places Section End -->
 
     <!-- Features Section Start -->
@@ -451,178 +256,6 @@
         </div>
     </section>
     <!-- Feature Section End -->
-
-    <!-- Special Packages Section Start -->
-    <section class="special-packages-sec pt-85 pb-90">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="section-title stitle-left">
-                        <h4>Our special packages</h4>
-                        <h2>Special <span>Packages</span> Offer</h2>
-                        <p>Deserunt quia ducimus ut illum optio cum eum voluptate corrupti numquam travel ipsum dolor consectetur adipisicing. Quia tempore, ex delectus rerum optio sapiente, magnam ullam </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-9">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="specialpackages_carousel owl-carousel owl-theme owl-navst">
-                                <div class="item">
-                                    <div class="special-packages">
-                                        <div class="thumb">
-                                            <img src="{% static 'ticket_reservation/images/features/1.jpg' %}" alt="">
-                                            <div class="offer-price"> Off 40%</div>
-                                            <div class="post-title-box">
-                                                <div class="price-box">
-                                                    <h5><span>$</span>400</h5>
-                                                    <h6>Starts From</h6>
-                                                </div>
-                                                <div class="title-box">
-                                                    <h4>Redilova Tour Place</h4>
-                                                    <h3>peelamedu, cbe, india</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel ipsum dolor sit amet, consectetur adipisicing. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum voluptate maxime blanditiis.</p>
-                                            <div class="small-hotel">
-                                                <div class="text">
-                                                    <h6>Hotels to Stay</h6>
-                                                    <h5>Hotel Saladi Tajo</h5>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star-half-empty"></i></a></li>
-                                                        <li><a href="#"><i class="fa  fa-star-o"></i></a></li>
-                                                        <li><a href="#">(3 Ratings)</a></li>
-                                                    </ul>
-                                                   <a class="map-viw" href="#"><i class="fa fa-map-marker"></i>View on Map</a>
-                                                </div>
-                                                <div class="thumb">
-                                                    <img src="{% static 'ticket_reservation/images/features/sm1.jpg' %}" alt="">
-                                                    <img src="{% static 'ticket_reservation/images/features/sm2.jpg' %}" alt="">
-                                                </div>
-                                            </div>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="special-packages">
-                                        <div class="thumb">
-                                            <img src="{% static 'ticket_reservation/images/features/2.jpg' %}" alt="">
-                                            <div class="offer-price"> Off 40%</div>
-                                            <div class="post-title-box">
-                                                <div class="price-box">
-                                                    <h5><span>$</span>400</h5>
-                                                    <h6>Starts From</h6>
-                                                </div>
-                                                <div class="title-box">
-                                                    <h4>Adventure swimming</h4>
-                                                    <h3>peelamedu, cbe, india</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel ipsum dolor sit amet, consectetur adipisicing. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum voluptate maxime blanditiis.</p>
-                                            <div class="small-hotel">
-                                                <div class="text">
-                                                    <h6>Hotels to Stay</h6>
-                                                    <h5>Hotel Saladi Tajo</h5>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star-half-empty"></i></a></li>
-                                                        <li><a href="#"><i class="fa  fa-star-o"></i></a></li>
-                                                        <li><a href="#">(3 Ratings)</a></li>
-                                                    </ul>
-                                                   <a class="map-viw" href="#"><i class="fa fa-map-marker"></i>View on Map</a>
-                                                </div>
-                                                <div class="thumb">
-                                                    <img src="{% static 'ticket_reservation/images/features/sm1.jpg' %}" alt="">
-                                                    <img src="{% static 'ticket_reservation/images/features/sm2.jpg' %}" alt="">
-                                                </div>
-                                            </div>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="special-packages">
-                                        <div class="thumb">
-                                            <img src="{% static 'ticket_reservation/images/features/3.jpg' %}" alt="">
-                                            <div class="offer-price"> Off 40%</div>
-                                            <div class="post-title-box">
-                                                <div class="price-box">
-                                                    <h5><span>$</span>400</h5>
-                                                    <h6>Starts From</h6>
-                                                </div>
-                                                <div class="title-box">
-                                                    <h4>Ratargul gorgeous</h4>
-                                                    <h3>peelamedu, cbe, india</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <ul class="info">
-                                                <li><a href="#"><i class="fa fa-calendar"></i>4 Days</a></li>
-                                                <li><a href="#"><i class="fa fa-user"></i>2 Person</a></li>
-                                                <li><a href="#"><i class="fa fa-map-marker"></i>View on Map</a></li>
-                                            </ul>
-                                            <p>Travel ipsum dolor sit amet, consectetur adipisicing. Quia tempore, ex delectus rerum optio sapiente, magnam ullam ipsum voluptate maxime blanditiis.</p>
-                                            <div class="small-hotel">
-                                                <div class="text">
-                                                    <h6>Hotels to Stay</h6>
-                                                    <h5>Hotel Saladi Tajo</h5>
-                                                    <ul>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-star-half-empty"></i></a></li>
-                                                        <li><a href="#"><i class="fa  fa-star-o"></i></a></li>
-                                                        <li><a href="#">(3 Ratings)</a></li>
-                                                    </ul>
-                                                   <a class="map-viw" href="#"><i class="fa fa-map-marker"></i>View on Map</a>
-                                                </div>
-                                                <div class="thumb">
-                                                    <img src="{% static 'ticket_reservation/images/features/sm1.jpg' %}" alt="">
-                                                    <img src="{% static 'ticket_reservation/images/features/sm2.jpg' %}" alt="">
-                                                </div>
-                                            </div>
-                                            <h5 class="share-btn"><i class="fa fa-share-alt"></i> Share</h5>
-                                            <a class="btn-theme" href="#">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="add-box thumb">
-                        <img src="{% static 'ticket_reservation/images/features/ad-1.png' %}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Special Packages Section End -->
 
     <!-- Global Section Start -->
     <section class="global-section over-layer-white pt-80 pb-70">

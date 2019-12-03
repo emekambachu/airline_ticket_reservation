@@ -8,8 +8,9 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class HomePage(TemplateView):
+class HomePage(ListView):
     template_name = 'home.html'
+    model = Flight
 
 
 class ProfilePage(LoginRequiredMixin, ListView):
